@@ -1,0 +1,47 @@
+body {
+  margin: 12px;
+  background-color: #333333;
+  /* transition on change */
+  opacity: 1;
+  transition: opacity 3s;
+}
+
+body.blackScreen {
+  opacity: 0;
+  transition: none;
+}
+
+#wrapper {
+  background-color: #cca831;
+  max-width: 600px;
+  margin: 10px auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.zButton {
+  width: 72px;
+  height: 72px;
+  border: none;
+  /* background-image: url('../img/sml_pisces.png'); */
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  opacity: .7;
+}
+
+.zButton:hover {
+  opacity: 1;
+}
+
+#pis {
+  background-image: url('../img/sml_pisces.png');
+}
+
+#sco {
+  background-image: url('../img/sml_scorpio.png');
+}
+
+#aqu {
+  background-image: url('../img/sml_aquarius.png');
+}
