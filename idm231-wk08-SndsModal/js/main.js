@@ -34,27 +34,92 @@ function userPicked(whichOne) {
   console.log('userPicked called: ' + whichOne);
   switch (whichOne) {
     case 'pis':
-      displayObj.src = 'img/ful_pisces.png';
+      // displayObj.src = 'img/ful_pisces.png';
+      zDisplayObj.src = 'img/sml_pisces.png';
+      // display title
+      zTitleObj.innerHTML = 'PISCES';
       // display date range
+      zDateRangeObj.innerHTML = '##-Month to ##-Month';
       // display description
+      zMoreInfo.innerHTML = '<p>Pisces are cool, they swim in water.</p>';
+      // Show hide modal
+      modal.hidden = !modal.hidden;
       // play sound
+      stopAllAudio();
+      bulletObj.play();
       break;
     case 'sco':
-      displayObj.src = 'img/ful_scorpio.png';
-       // display date range
+      // displayObj.src = 'img/ful_scorpio.png';
+      zDisplayObj.src = 'img/sml_scorpio.png';
+      // display title
+      zTitleObj.innerHTML = 'SCORPIO';
+      // display date range
+      zDateRangeObj.innerHTML = '##-Month to ##-Month';
       // display description
+      zMoreInfo.innerHTML = '<p>Scorpio are .....</p>';
+      // Show hide modal
+      modal.hidden = !modal.hidden;
       // play sound
+      stopAllAudio();
+      haloObj.play();
       break;  
     case 'aqu':
-      displayObj.src = 'img/ful_aquarius.png';
+      // displayObj.src = 'img/ful_aquarius.png';
+      zDisplayObj.src = 'img/sml_aquarius.png';
+      // display title
+      zTitleObj.innerHTML = 'AQUARIUS';
       // display date range
+      zDateRangeObj.innerHTML = '##-Month to ##-Month';
       // display description
+      zMoreInfo.innerHTML = '<p>Aquarius are .....</p>';
+      // Show hide modal
+      modal.hidden = !modal.hidden;
       // play sound
+      stopAllAudio();
+      waterObj.play();
       break;
     default:
       displayObj.src = 'img/ful_blank.png';
   }
 }
+
+// Sound Controls
+//
+
+function stopAllAudio() {
+  bulletObj.pause();
+  bulletObj.currentTime = 0;
+  //
+  haloObj.pause();
+  haloObj.currentTime = 0;
+  //
+  waterObj.pause();
+  waterObj.currentTime = 0;
+}
+
+const bulletObj = document.getElementById('sndBullet');
+const haloObj = document.getElementById('sndHalo');
+const waterObj = document.getElementById('sndWater');
+
+// Modal Controls
+//
+
+const modal = document.getElementById('modal');
+
+const closeModalObj = document.getElementById('btn-modal-close');
+closeModalObj.addEventListener('click', function() {
+  modal.hidden = !modal.hidden;
+  stopAllAudio();
+});
+
+// Link modal element/objects to JS
+const zDisplayObj = document.getElementById('zDisplayImg');
+const zTitleObj = document.getElementById('zTitle');
+const zDateRangeObj = document.getElementById('zDateRange');
+const zMoreInfoObj = document.getElementById('zMoreInfo');
+
+
+
 
 // Calendar Input Code
 //

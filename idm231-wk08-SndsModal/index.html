@@ -7,9 +7,15 @@
   <meta charset="utf-8">
   <title>CSS DOM &amp; BUTTONS</title>
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/screen.css">
 </head>
 
 <body class="blackScreen" onload="fade2Content();">
+  <!-- Preload sound files -->
+  <audio id="sndBullet" src="snd/bullet.mp3" preload="auto"></audio>
+  <audio id="sndHalo" src="snd/halo1.mp3" preload="auto"></audio>
+  <audio id="sndWater" src="snd/water.mp3" preload="auto"></audio>
+
   <div id="wrapper">
     <div id="userinfo">
       <p><input id="fname" type="text" placeholder="First Name"></p>
@@ -28,6 +34,23 @@
     <hr>
     <p>Zodiac image by Tatiana from the Noun Project</p>
   </div>
+   <!-- Custom modal -->
+   <div id="modal" class="modal" hidden>
+    <div class="modal-body">
+      <div class="modal-content">
+        <div>
+          <img id="zDisplayImg" src="img/sml_scorpio.png" alt="blank">
+        </div>
+        <p><span id="zTitle">Title</span>, <span id="zDateRange">Date Range</span></p>
+        <div id="zMoreInfo">
+          <p>Object description goes here</p>
+        </div>
+        <button id="btn-modal-close" class="toggle-modal">Close</button>
+      </div>
+    </div>
+    <div class="blanket"></div>
+  </div>
+
   <script src="js/main.js"></script>
 </body>
 
