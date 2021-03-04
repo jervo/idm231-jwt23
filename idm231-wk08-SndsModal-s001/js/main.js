@@ -34,22 +34,49 @@ function userPicked(whichOne) {
   console.log('userPicked called: ' + whichOne);
   switch (whichOne) {
     case 'pis':
-      displayObj.src = 'img/ful_pisces.png';
+      // displayObj.src = 'img/ful_pisces.png';
+      zDisplayImgObj.src = 'img/sml_pisces.png';
+      // Title
+      zTitleObj.innerHTML = "PISCES";
       // display date range
+      zDateRangeObj.innerHTML = "##-Month to ##-Month";
       // display description
+      zMoreInfoObj.innerHTML = "<p>Pisces are cool, they swim in water.</p>";
       // play sound
+      stopAllAudio();
+      bulletObj.play();
+      //
+      modal.hidden = !modal.hidden;
       break;
     case 'sco':
-      displayObj.src = 'img/ful_scorpio.png';
-       // display date range
+      // displayObj.src = 'img/ful_scorpio.png';
+      zDisplayImgObj.src = 'img/sml_scorpio.png';
+      // Title
+      zTitleObj.innerHTML = "SCORPIO";
+      // display date range
+      zDateRangeObj.innerHTML = "##-Month to ##-Month";
       // display description
+      zMoreInfoObj.innerHTML = "<p>Scorpio....!</p>";
       // play sound
+      stopAllAudio();
+      haloObj.play();
+      //
+      modal.hidden = !modal.hidden;
       break;  
     case 'aqu':
-      displayObj.src = 'img/ful_aquarius.png';
+      // displayObj.src = 'img/ful_aquarius.png';
+      zDisplayImgObj.src = 'img/sml_aquarius.png';
+      // Title
+      zTitleObj.innerHTML = "AQUARIUS";
       // display date range
+      zDateRangeObj.innerHTML = "##-Month to ##-Month";
       // display description
+      zMoreInfoObj.innerHTML = "<p>Aquarius....!</p>";
       // play sound
+      stopAllAudio();
+      waterObj.play();
+      //
+      modal.hidden = !modal.hidden;
       break;
     default:
       displayObj.src = 'img/ful_blank.png';
@@ -113,3 +140,38 @@ userSubmitObj.addEventListener('click', function () {
   // Display custom image based on zodiac sign
 
 }); 
+
+
+// Modal Code
+//
+
+const modal = document.getElementById('modal');
+const closeModalObj = document.getElementById('btn-modal-close');
+closeModalObj.addEventListener('click', function() {
+  console.log('Close this modal!');
+  stopAllAudio();
+  modal.hidden = !modal.hidden;
+});
+
+const zDisplayImgObj = document.getElementById('zDisplayImg');
+const zTitleObj = document.getElementById('zTitle');
+const zDateRangeObj = document.getElementById('zDateRange');
+const zMoreInfoObj = document.getElementById('zMoreInfo');
+
+
+// Sound Control Code
+const bulletObj = document.getElementById('sndBullet');
+const haloObj = document.getElementById('sndHalo');
+const waterObj = document.getElementById('sndWater');
+
+function stopAllAudio() {
+  // Stop ALL sounds for playing
+  bulletObj.pause();
+  bulletObj.currentTime = 0;
+  //
+  haloObj.pause();
+  haloObj.currentTime = 0;
+  //
+  waterObj.pause();
+  waterObj.currentTime = 0;
+}
